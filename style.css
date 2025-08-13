@@ -143,3 +143,38 @@ h2{
     text-decoration: line-through;
     color: #afb0b0;
 }
+@media (max-width: 768px) {
+    #to-do-list {
+        width: 90%;
+        padding: 15px;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    #inputTarefa {
+        padding: 10px;
+        font-size: 1rem;
+    }
+    #adicionarTarefa {
+        width: 30%;
+        font-size: 0.9rem;
+    }
+    .item {
+        font-size: 1.2rem;
+    }
+    .labelCheck {
+        padding: 20px 0px;
+        gap: 8px;
+    }
+    .nomeTarefa::before {
+        height: 15px;
+        width: 15px;
+    }
+    .checkTarefa:checked + .nomeTarefa::before {
+        font-size: 0.7rem;
+    }
+    .botaoRemover {
+        width: 40px;
+        font-size: 1rem;
+    }
+}
