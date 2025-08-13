@@ -1,0 +1,145 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fffaf0;
+}
+#to-do-list{
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+#to-do-list-content{
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+    overflow: hidden;
+}
+h2{
+    margin: 0;
+    font-size: 2rem;
+}
+#formAdicionar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #EBEDEE;
+    border-radius: 50px;
+    /* margin-top: 20px; */
+    transition: background-color 0.3s ease-out;
+}
+#formAdicionar:focus-within{
+    background-color: #d9ddde;
+}
+#inputTarefa{
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: 5px;
+    padding: 15px;
+    flex: 1;
+    font-size: 1.2rem;
+}
+#adicionarTarefa{
+    font-size: 1rem;
+    background: #ff5945;
+    border: none;
+    border-radius: 50px;
+    width: 20%;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.3s;
+}
+#adicionarTarefa:hover{
+    background: #ff7667;
+}
+#listaTarefas{
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+.item{
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.item .textoTarefa{
+    transition: color 0.3s, text-decoration 0.3s;
+}
+.checkTarefa{
+    height: 0;
+    width: 0;
+}
+.labelCheck{
+    display: flex;
+    flex: 1;
+    background-color: #EBEDEE;
+    border-radius: 10px;
+    padding: 30px 0px;
+    gap: 12px;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.labelCheck:hover{
+    background-color: #d9ddde;
+}
+.nomeTarefa{
+    display: flex;
+    align-items: center;
+    word-break: break-word;
+    margin-right: 20px;
+    flex: 1;
+    justify-content: space-around;
+}
+.botaoRemover{
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 50px;
+    background-color: transparent;
+    border: none;
+}
+.textoTarefa{
+    flex: 1;
+}
+.nomeTarefa::before{
+    flex: 0 0 20px;
+    margin-right: 10px;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+/*Quando o checkbox está checado, então estilizar a caixinha criada com before*/
+.checkTarefa:checked + .nomeTarefa::before{
+    background-color: #ff5945;
+    font-family: FontAwesome;
+    content: "\f00c";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.8rem;
+}
+.checkTarefa:checked + .nomeTarefa .textoTarefa{
+    text-decoration: line-through;
+    color: #afb0b0;
+}
